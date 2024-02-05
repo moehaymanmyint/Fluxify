@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HealthCalculatorScreen">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/head"
+      android:layout_width="375dp"
+      android:layout_height="91dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.555"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.145">
+
+    <ImageView
+        android:id="@+id/healthLogo"
+        android:layout_width="82dp"
+        android:layout_height="90dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.153"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/health"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/conversionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/grand_hotel"
+        android:text="Health Converter"
+        android:textColor="#0D2A56"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.22"
+        app:layout_constraintStart_toEndOf="@+id/healthLogo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.489" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <View
+      android:id="@+id/bmiView"
+      android:layout_width="300dp"
+      android:layout_height="112dp"
+      android:background="@drawable/rectangle"
+      android:elevation="15dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.513"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/head"
+      app:layout_constraintVertical_bias="0.163"
+      tools:ignore="MissingConstraints" />
+
+  <TextView
+      android:id="@+id/bmiText"
+      android:layout_width="88dp"
+      android:layout_height="39dp"
+      android:fontFamily="@font/gabriela"
+      android:text="BMI"
+      android:textColor="#0D2A56"
+      android:textSize="22sp"
+      android:textStyle="bold"
+      android:elevation="15dp"
+      app:layout_constraintBottom_toBottomOf="@+id/bmiView"
+      app:layout_constraintEnd_toEndOf="@+id/bmiView"
+      app:layout_constraintHorizontal_bias="0.254"
+      app:layout_constraintStart_toStartOf="@+id/bmiView"
+      app:layout_constraintTop_toTopOf="@+id/bmiView"
+      app:layout_constraintVertical_bias="0.52" />
+
+  <ImageView
+      android:id="@+id/bmiImg"
+      android:layout_width="113dp"
+      android:layout_height="89dp"
+      android:elevation="15dp"
+      app:layout_constraintBottom_toBottomOf="@+id/bmiView"
+      app:layout_constraintEnd_toEndOf="@+id/bmiView"
+      app:layout_constraintStart_toEndOf="@+id/bmiText"
+      app:layout_constraintTop_toTopOf="@+id/bmiView"
+      app:srcCompat="@drawable/bmi" />
+
+  <View
+      android:id="@+id/bmrView"
+      android:layout_width="300dp"
+      android:layout_height="112dp"
+      android:background="@drawable/rectangle"
+      android:elevation="15dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.513"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/bmiView"
+      app:layout_constraintVertical_bias="0.097"
+      tools:ignore="MissingConstraints" />
+
+  <TextView
+      android:id="@+id/bmrText"
+      android:layout_width="92dp"
+      android:layout_height="45dp"
+      android:fontFamily="@font/gabriela"
+      android:text="BMR"
+      android:textColor="#0D2A56"
+      android:textSize="22sp"
+      android:textStyle="bold"
+      android:elevation="15dp"
+      app:layout_constraintBottom_toBottomOf="@+id/bmrView"
+      app:layout_constraintEnd_toEndOf="@+id/bmrView"
+      app:layout_constraintHorizontal_bias="0.24"
+      app:layout_constraintStart_toStartOf="@+id/bmrView"
+      app:layout_constraintTop_toTopOf="@+id/bmrView"
+      app:layout_constraintVertical_bias="0.507" />
+
+  <ImageView
+      android:id="@+id/bmrImg"
+      android:layout_width="113dp"
+      android:layout_height="89dp"
+      android:elevation="15dp"
+      app:layout_constraintBottom_toBottomOf="@+id/bmrView"
+      app:layout_constraintEnd_toEndOf="@+id/bmrView"
+      app:layout_constraintStart_toEndOf="@+id/bmrText"
+      app:layout_constraintTop_toTopOf="@+id/bmrView"
+      app:srcCompat="@drawable/bmr" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

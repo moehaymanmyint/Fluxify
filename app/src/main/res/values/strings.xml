@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">Fluxify</string>
+    <string name="title_activity_common_converter_screen">CommonConverterScreen</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string-array name="length_units">
+        <item>km</item>
+        <item>m</item>
+        <item>cm</item>
+        <item>mm</item>
+        <item>ft</item>
+        <item>in</item>
+    </string-array>
+
+    <string-array name="area_units">
+        <item>km<sup>2</sup></item>
+        <item>m<sup>2</sup></item>
+        <item>cm<sup>2</sup></item>
+        <item>mm<sup>2</sup></item>
+        <item>ft<sup>2</sup></item>
+        <item>in<sup>2</sup></item>
+    </string-array>
+
+    <string-array name="weight_units">
+        <item>kg</item>
+        <item>g</item>
+        <item>lb</item>
+    </string-array>
+
+    <string-array name="volume_units">
+        <item>m3</item>
+        <item>cm3</item>
+        <item>L</item>
+        <item>mL</item>
+    </string-array>
+
+    <string-array name="speed_units">
+        <item>m/s</item>
+        <item>km/s</item>
+        <item>miles/hr</item>
+    </string-array>
+
+    <string-array name="time_units">
+        <item>hr</item>
+        <item>min</item>
+        <item>sec</item>
+        <item>ms</item>
+    </string-array>
+
+    <string-array name="temp_units">
+        <item>°C</item>
+        <item>°F</item>
+    </string-array>
+
+</resources>

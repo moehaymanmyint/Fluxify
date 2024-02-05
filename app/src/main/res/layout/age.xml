@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Age">
+
+    <ImageView
+        android:id="@+id/ageImg"
+        android:layout_width="113dp"
+        android:layout_height="89dp"
+        app:layout_constraintBottom_toTopOf="@+id/age"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.537"
+        app:srcCompat="@drawable/age" />
+
+    <TextView
+        android:id="@+id/ageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gabriela"
+        android:text="Age Calculator"
+        android:textColor="#0D2A56"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ageImg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintStart_toEndOf="@+id/ageImg"
+        app:layout_constraintTop_toTopOf="@+id/ageImg" />
+
+    <View
+        android:id="@+id/age"
+        android:layout_width="300dp"
+        android:layout_height="151dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/rectangle"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.367" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:elevation="15dp"
+        android:fontFamily="@font/gabriela"
+        android:text="Choose your Birth Date:"
+        android:textColor="@color/tab"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/age"
+        app:layout_constraintHorizontal_bias="0.402"
+        app:layout_constraintStart_toStartOf="@+id/age"
+        app:layout_constraintTop_toTopOf="@+id/age" />
+
+    <EditText
+        android:id="@+id/birthDate"
+        android:layout_width="241dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:fontFamily="@font/gabriela"
+        android:hint="dd/mm/yy"
+        android:inputType="date"
+        android:textColor="@color/tab"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/age"
+        app:layout_constraintEnd_toEndOf="@+id/age"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="@+id/age"
+        app:layout_constraintTop_toTopOf="@+id/age"
+        app:layout_constraintVertical_bias="0.688" />
+
+    <Button
+        android:id="@+id/ageBtn"
+        android:layout_width="108dp"
+        android:layout_height="49dp"
+        android:background="@drawable/rounded_bn"
+        android:fontFamily="@font/gabriela"
+        android:text="Calculate"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/age"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/age"
+        app:layout_constraintTop_toBottomOf="@+id/age"
+        app:layout_constraintVertical_bias="0.158" />
+
+    <View
+        android:id="@+id/ageResult"
+        android:layout_width="298dp"
+        android:layout_height="129dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/rectangle"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ageBtn"
+        app:layout_constraintVertical_bias="0.508" />
+
+    <TextView
+        android:id="@+id/ageRes"
+        android:layout_width="282dp"
+        android:layout_height="42dp"
+        android:fontFamily="@font/gabriela"
+        android:text="Your Age:"
+        android:textAlignment="center"
+        android:textColor="#0D2A56"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ageResult"
+        app:layout_constraintEnd_toEndOf="@+id/ageResult"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="@+id/ageResult"
+        app:layout_constraintTop_toTopOf="@+id/ageResult"
+        app:layout_constraintVertical_bias="0.298" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="282dp"
+        android:layout_height="42dp"
+        android:fontFamily="@font/gabriela"
+        android:text="0 Years 0 Months 0 Days"
+        android:textAlignment="center"
+        android:textColor="#0D2A56"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ageResult"
+        app:layout_constraintEnd_toEndOf="@+id/ageRes"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ageRes"
+        app:layout_constraintTop_toBottomOf="@+id/ageRes"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Temperature">
+
+    <ImageView
+        android:id="@+id/tempImg"
+        android:layout_width="76dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="44dp"
+        app:layout_constraintBottom_toTopOf="@+id/temp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/temperature" />
+
+    <TextView
+        android:id="@+id/tempText"
+        android:layout_width="225dp"
+        android:layout_height="75dp"
+        android:fontFamily="@font/gabriela"
+        android:text="Temperature Converter"
+        android:textColor="#0D2A56"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tempImg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.225"
+        app:layout_constraintStart_toEndOf="@+id/tempImg"
+        app:layout_constraintTop_toTopOf="@+id/tempImg"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/temp"
+        android:layout_width="333dp"
+        android:layout_height="314dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/rectangle"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.424" />
+
+    <Spinner
+        android:id="@+id/tempSpinner1"
+        android:layout_width="301dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="16dp"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/temp"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/temp"
+        app:layout_constraintTop_toTopOf="@+id/temp"
+        app:layout_constraintVertical_bias="0.08" />
+
+    <EditText
+        android:id="@+id/tempNo"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:fontFamily="@font/gabriela"
+        android:hint="Enter Value"
+        android:inputType="numberDecimal"
+        android:textColor="#0D2A56"
+        android:elevation="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/tempSpinner1"
+        app:layout_constraintStart_toStartOf="@+id/tempSpinner1"
+        app:layout_constraintTop_toBottomOf="@+id/tempSpinner1" />
+
+    <Spinner
+        android:id="@+id/tempSpinner2"
+        android:layout_width="301dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="16dp"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/temp"
+        app:layout_constraintEnd_toEndOf="@+id/tempNo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tempNo"
+        app:layout_constraintTop_toBottomOf="@+id/tempNo"
+        app:layout_constraintVertical_bias="0.184" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="282dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/gabriela"
+        android:text=" "
+        android:textAlignment="center"
+        android:textColor="#0D2A56"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/temp"
+        app:layout_constraintEnd_toEndOf="@+id/tempSpinner2"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="@+id/tempSpinner2"
+        app:layout_constraintTop_toBottomOf="@+id/tempSpinner2"
+        app:layout_constraintVertical_bias="0.355" />
+
+    <Button
+        android:id="@+id/tempBtn"
+        android:layout_width="108dp"
+        android:layout_height="49dp"
+        android:background="@drawable/rounded_bn"
+        android:fontFamily="@font/gabriela"
+        android:text="Convert"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/temp"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/temp"
+        app:layout_constraintTop_toBottomOf="@+id/temp"
+        app:layout_constraintVertical_bias="0.178" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BMR">
+
+    <ImageView
+        android:id="@+id/bmrImg"
+        android:layout_width="76dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.143"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.055"
+        app:srcCompat="@drawable/bmr" />
+
+    <TextView
+        android:id="@+id/bmrText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gabriela"
+        android:text="BMR Calculator"
+        android:textColor="#0D2A56"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/bmrImg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintStart_toEndOf="@+id/bmrImg"
+        app:layout_constraintTop_toTopOf="@+id/bmrImg"
+        app:layout_constraintVertical_bias="0.487" />
+
+
+    <View
+        android:id="@+id/bmr"
+        android:layout_width="322dp"
+        android:layout_height="261dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/rectangle"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.297" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gabriela"
+        android:text="Weight"
+        android:textColor="@color/tab"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/bmrWeight"
+        app:layout_constraintEnd_toEndOf="@+id/bmrWeight"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/bmrWeight"
+        app:layout_constraintTop_toTopOf="@+id/bmr"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/gabriela"
+        android:text="Height"
+        android:textColor="@color/tab"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/bmrHeight"
+        app:layout_constraintEnd_toEndOf="@+id/bmrHeight"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/bmrHeight"
+        app:layout_constraintTop_toBottomOf="@+id/bmrWeight"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/bmrHeight"
+        android:layout_width="258dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:fontFamily="@font/gabriela"
+        android:hint="Enter Height (Cm)"
+        android:inputType="numberDecimal"
+        android:textColor="#0D2A56"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bmr"
+        app:layout_constraintEnd_toEndOf="@+id/bmrWeight"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/bmrWeight"
+        app:layout_constraintTop_toBottomOf="@+id/bmrWeight"
+        app:layout_constraintVertical_bias="0.279" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gabriela"
+        android:text="Age"
+        android:textColor="@color/tab"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/bmrAge"
+        app:layout_constraintEnd_toEndOf="@+id/bmrHeight"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/bmrHeight"
+        app:layout_constraintTop_toBottomOf="@+id/bmrHeight"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/bmrAge"
+        android:layout_width="258dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:fontFamily="@font/gabriela"
+        android:hint="Enter Age (Years)"
+        android:inputType="numberDecimal"
+        android:textColor="#0D2A56"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bmr"
+        app:layout_constraintEnd_toEndOf="@+id/bmrWeight"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/bmrWeight"
+        app:layout_constraintTop_toBottomOf="@+id/bmrHeight"
+        app:layout_constraintVertical_bias="0.7" />
+
+    <EditText
+        android:id="@+id/bmrWeight"
+        android:layout_width="258dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:fontFamily="@font/gabriela"
+        android:hint="Enter Weight (Kg)"
+        android:inputType="numberDecimal"
+        android:textColor="#0D2A56"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bmr"
+        app:layout_constraintEnd_toEndOf="@+id/bmr"
+        app:layout_constraintStart_toStartOf="@+id/bmr"
+        app:layout_constraintTop_toTopOf="@+id/bmr"
+        app:layout_constraintVertical_bias="0.162" />
+
+    <LinearLayout
+        android:id="@+id/gender"
+        android:layout_width="406dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="200dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/male"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gabriela"
+                android:gravity="center"
+                android:text="Male"
+                android:textColor="@color/tab"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/maleImg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="6dp"
+                android:src="@drawable/male" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/female"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gabriela"
+                android:gravity="center"
+                android:text="Female"
+                android:textColor="@color/tab"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/femaleImg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="6dp"
+                android:src="@drawable/female" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bmrBtn"
+        android:layout_width="108dp"
+        android:layout_height="49dp"
+        android:background="@drawable/rounded_bn"
+        android:fontFamily="@font/gabriela"
+        android:text="Calculate"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/bmr"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/bmr"
+        app:layout_constraintTop_toBottomOf="@+id/bmr"
+        app:layout_constraintVertical_bias="0.48" />
+
+    <View
+        android:id="@+id/bmrResultView"
+        android:layout_width="328dp"
+        android:layout_height="118dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/rectangle"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bmrBtn"
+        app:layout_constraintVertical_bias="0.428" />
+
+    <TextView
+        android:id="@+id/TextView"
+        android:layout_width="192dp"
+        android:layout_height="31dp"
+        android:fontFamily="@font/gabriela"
+        android:text="Your BMR:"
+        android:textAlignment="center"
+        android:textColor="#0D2A56"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bmrResultView"
+        app:layout_constraintEnd_toEndOf="@+id/bmrResultView"
+        app:layout_constraintStart_toStartOf="@+id/bmrResultView"
+        app:layout_constraintTop_toTopOf="@+id/bmrResultView"
+        app:layout_constraintVertical_bias="0.262" />
+
+    <TextView
+        android:id="@+id/bmrResult"
+        android:layout_width="192dp"
+        android:layout_height="31dp"
+        android:fontFamily="@font/gabriela"
+        android:text="0.00"
+        android:textAlignment="center"
+        android:textColor="#0D2A56"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bmrResultView"
+        app:layout_constraintEnd_toEndOf="@+id/TextView"
+        app:layout_constraintStart_toStartOf="@+id/TextView"
+        app:layout_constraintTop_toBottomOf="@+id/TextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

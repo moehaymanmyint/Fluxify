@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainScreen">
+
+    <ImageView
+        android:id="@+id/logoImg"
+        android:layout_width="40dp"
+        android:layout_height="38dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.091"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.037"
+        app:srcCompat="@drawable/logo"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/logoName"
+        android:layout_width="66dp"
+        android:layout_height="37dp"
+        android:fontFamily="@font/grand_hotel"
+        android:text="Fluxify"
+        android:textColor="#0D2A56"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/logoImg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.027"
+        app:layout_constraintStart_toEndOf="@+id/logoImg"
+        app:layout_constraintTop_toTopOf="@+id/logoImg"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:fontFamily="@font/gabriela"
+        android:text="Welcome form Fluxify!!!"
+        android:textColor="#0D2A56"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.304"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoName" />
+
+    <TextView
+        android:id="@+id/convertText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/gabriela"
+        android:text="Let’s convert something..."
+        android:textColor="#0D2A56"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.682"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeText" />
+
+    <View
+        android:id="@+id/commonButton"
+        android:layout_width="329dp"
+        android:layout_height="123dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/rectangle"
+        android:elevation="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.524"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/convertText"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/commonTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gabriela"
+        android:text="Common Converter"
+        android:textColor="#0D2A56"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/commonButton"
+        app:layout_constraintEnd_toEndOf="@+id/commonButton"
+        app:layout_constraintHorizontal_bias="0.134"
+        app:layout_constraintStart_toStartOf="@+id/commonButton"
+        app:layout_constraintTop_toTopOf="@+id/commonButton"
+        app:layout_constraintVertical_bias="0.23" />
+
+    <TextView
+        android:id="@+id/commonText"
+        android:layout_width="202dp"
+        android:layout_height="42dp"
+        android:fontFamily="@font/gabriela"
+        android:text="Swiftly convert Length, Weight, Area, and Volume."
+        android:textAlignment="textStart"
+        android:textColor="#0D2A56"
+        android:textSize="14sp"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/commonButton"
+        app:layout_constraintEnd_toEndOf="@+id/commonTitle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/commonTitle"
+        app:layout_constraintTop_toBottomOf="@+id/commonTitle"
+        app:layout_constraintVertical_bias="0.472" />
+
+    <ImageView
+        android:id="@+id/coomonImg"
+        android:layout_width="92dp"
+        android:layout_height="108dp"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/commonButton"
+        app:layout_constraintEnd_toEndOf="@+id/commonButton"
+        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintStart_toStartOf="@+id/commonButton"
+        app:layout_constraintTop_toTopOf="@+id/commonButton"
+        app:layout_constraintVertical_bias="0.533"
+        app:srcCompat="@drawable/coverter3"
+        tools:ignore="MissingConstraints" />
+
+    <View
+        android:id="@+id/conversionButton"
+        android:layout_width="329dp"
+        android:layout_height="123dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rectangle"
+        android:elevation="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/commonButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/commonButton"
+        app:layout_constraintTop_toBottomOf="@+id/commonButton"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/conversionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gabriela"
+        android:text="Conversion Calculator"
+        android:textColor="#0D2A56"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/conversionButton"
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintStart_toStartOf="@+id/conversionButton"
+        app:layout_constraintTop_toTopOf="@+id/conversionButton"
+        app:layout_constraintVertical_bias="0.046" />
+
+    <ImageView
+        android:id="@+id/coversionImg"
+        android:layout_width="92dp"
+        android:layout_height="122dp"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/conversionButton"
+        app:layout_constraintEnd_toEndOf="@+id/conversionButton"
+        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintStart_toStartOf="@+id/conversionButton"
+        app:layout_constraintTop_toTopOf="@+id/conversionButton"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/coverter1"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/conersionText"
+        android:layout_width="191dp"
+        android:layout_height="69dp"
+        android:elevation="15dp"
+        android:fontFamily="@font/gabriela"
+        android:text="Instantly calculate temperature, percentage, and age."
+        android:textAlignment="textStart"
+        android:textColor="#0D2A56"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/conversionButton"
+        app:layout_constraintEnd_toEndOf="@+id/conversionTitle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/conversionTitle"
+        app:layout_constraintTop_toBottomOf="@+id/conversionTitle"
+        app:layout_constraintVertical_bias="0.275" />
+
+    <View
+        android:id="@+id/healthButton"
+        android:layout_width="329dp"
+        android:layout_height="123dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rectangle"
+        android:elevation="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/conversionButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/conversionButton"
+        app:layout_constraintTop_toBottomOf="@+id/conversionButton"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/healthTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gabriela"
+        android:text="Health Calculator"
+        android:textColor="#0D2A56"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/healthButton"
+        app:layout_constraintEnd_toEndOf="@+id/healthButton"
+        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintStart_toStartOf="@+id/healthButton"
+        app:layout_constraintTop_toTopOf="@+id/healthButton"
+        app:layout_constraintVertical_bias="0.22" />
+
+    <ImageView
+        android:id="@+id/healthImg"
+        android:layout_width="89dp"
+        android:layout_height="124dp"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/healthButton"
+        app:layout_constraintEnd_toEndOf="@+id/healthButton"
+        app:layout_constraintHorizontal_bias="0.929"
+        app:layout_constraintStart_toStartOf="@+id/healthButton"
+        app:layout_constraintTop_toTopOf="@+id/healthButton"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/coverter2"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/healthText"
+        android:layout_width="186dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/gabriela"
+        android:text="Evaluate BMI and BMR calculator with ease."
+        android:textAlignment="textStart"
+        android:textColor="#0D2A56"
+        android:textSize="14sp"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/healthButton"
+        app:layout_constraintEnd_toEndOf="@+id/healthTitle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/healthTitle"
+        app:layout_constraintTop_toBottomOf="@+id/healthTitle"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

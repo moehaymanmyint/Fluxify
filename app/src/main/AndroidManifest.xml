@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Fluxify"
+        tools:targetApi="31">
+        <activity
+            android:name=".Discount"
+            android:exported="false"
+            android:parentActivityName=".ConversionCalculatorScreen"
+            android:label=" "/>
+        <activity
+            android:name=".Age"
+            android:exported="false"
+            android:parentActivityName=".ConversionCalculatorScreen"
+            android:label=" "/>
+        <activity
+            android:name=".Temperature"
+            android:exported="false"
+            android:parentActivityName=".ConversionCalculatorScreen"
+            android:label=" "/>
+        <activity
+            android:name=".BMR"
+            android:exported="false"
+            android:parentActivityName=".HealthCalculatorScreen"
+            android:label=" "/>
+        <activity
+            android:name=".BMI"
+            android:exported="false"
+            android:parentActivityName=".HealthCalculatorScreen"
+            android:label=" "/>
+        <activity
+            android:name=".Time"
+            android:exported="false"
+            android:parentActivityName=".CommonConverterScreen"
+            android:label=" "/>
+        <activity
+            android:name=".Speed"
+            android:exported="false"
+            android:parentActivityName=".CommonConverterScreen"
+            android:label=" "/>
+        <activity
+            android:name=".Volume"
+            android:exported="false"
+            android:parentActivityName=".CommonConverterScreen"
+            android:label=" "/>
+        <activity
+            android:name=".Weight"
+            android:exported="false"
+            android:parentActivityName=".CommonConverterScreen"
+            android:label=" "/>
+        <activity
+            android:name=".Area"
+            android:exported="false"
+            android:parentActivityName=".CommonConverterScreen"
+            android:label=" "/>
+        <activity
+            android:name=".Length"
+            android:exported="false"
+            android:parentActivityName=".CommonConverterScreen"
+            android:label=" "/>
+        <activity
+            android:name=".HealthCalculatorScreen"
+            android:exported="false"
+            android:parentActivityName=".MainScreen"
+            android:label=" "/>
+        <activity
+            android:name=".ConversionCalculatorScreen"
+            android:exported="false"
+            android:parentActivityName=".MainScreen"
+            android:label=" "/>
+        <activity
+            android:name=".CommonConverterScreen"
+            android:exported="false"
+            android:theme="@style/Theme.Fluxify"
+            android:parentActivityName=".MainScreen"
+            android:label=" "/>
+        <activity
+            android:name=".MainScreen"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

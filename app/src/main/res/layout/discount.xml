@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Discount">
+
+    <ImageView
+        android:id="@+id/discountImg"
+        android:layout_width="76dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="44dp"
+        app:layout_constraintBottom_toTopOf="@+id/discount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/discount" />
+
+    <TextView
+        android:id="@+id/discountText"
+        android:layout_width="178dp"
+        android:layout_height="64dp"
+        android:fontFamily="@font/gabriela"
+        android:text="Discount Calculator"
+        android:textColor="#0D2A56"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/discountImg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.211"
+        app:layout_constraintStart_toEndOf="@+id/discountImg"
+        app:layout_constraintTop_toTopOf="@+id/discountImg"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <View
+        android:id="@+id/discount"
+        android:layout_width="327dp"
+        android:layout_height="215dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/rectangle"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.432" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gabriela"
+        android:text="Original Price:"
+        android:textColor="@color/tab"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/originalPrice"
+        app:layout_constraintEnd_toEndOf="@+id/originalPrice"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/originalPrice"
+        app:layout_constraintTop_toTopOf="@+id/discount"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/originalPrice"
+        android:layout_width="258dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:fontFamily="@font/gabriela"
+        android:hint="Enter original price"
+        android:inputType="numberDecimal"
+        android:textColor="#0D2A56"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/discount"
+        app:layout_constraintEnd_toEndOf="@+id/discount"
+        app:layout_constraintHorizontal_bias="0.318"
+        app:layout_constraintStart_toStartOf="@+id/discount"
+        app:layout_constraintTop_toTopOf="@+id/discount"
+        app:layout_constraintVertical_bias="0.311" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="332dp"
+        android:fontFamily="@font/gabriela"
+        android:text="Discount (%)"
+        android:textColor="@color/tab"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/discountAmt"
+        app:layout_constraintEnd_toEndOf="@+id/discountAmt"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/discountAmt"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/discountAmt"
+        android:layout_width="258dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:fontFamily="@font/gabriela"
+        android:hint="Enter disount amount"
+        android:inputType="numberDecimal"
+        android:textColor="#0D2A56"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/discount"
+        app:layout_constraintEnd_toEndOf="@+id/originalPrice"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/originalPrice"
+        app:layout_constraintTop_toBottomOf="@+id/originalPrice"
+        app:layout_constraintVertical_bias="0.652" />
+
+    <Button
+        android:id="@+id/discountBtn"
+        android:layout_width="108dp"
+        android:layout_height="49dp"
+        android:background="@drawable/rounded_bn"
+        android:fontFamily="@font/gabriela"
+        android:text="Calculate"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/discount"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/discount"
+        app:layout_constraintTop_toBottomOf="@+id/discount"
+        app:layout_constraintVertical_bias="0.151" />
+
+    <View
+        android:id="@+id/discountResultView"
+        android:layout_width="328dp"
+        android:layout_height="118dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/rectangle"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/discountBtn"
+        app:layout_constraintVertical_bias="0.303" />
+
+    <TextView
+        android:id="@+id/TextView"
+        android:layout_width="192dp"
+        android:layout_height="31dp"
+        android:fontFamily="@font/gabriela"
+        android:text="Discounted Price:"
+        android:textAlignment="textStart"
+        android:textColor="#0D2A56"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/discountResultView"
+        app:layout_constraintEnd_toEndOf="@+id/discountResultView"
+        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintStart_toStartOf="@+id/discountResultView"
+        app:layout_constraintTop_toTopOf="@+id/discountResultView"
+        app:layout_constraintVertical_bias="0.252" />
+
+    <TextView
+        android:id="@+id/disountedPrice"
+        android:layout_width="104dp"
+        android:layout_height="31dp"
+        android:fontFamily="@font/gabriela"
+        android:text=" "
+        android:textAlignment="textStart"
+        android:textColor="#0D2A56"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/TextView"
+        app:layout_constraintEnd_toEndOf="@+id/discountResultView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/TextView"
+        app:layout_constraintTop_toTopOf="@+id/TextView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/TextView4"
+        android:layout_width="192dp"
+        android:layout_height="31dp"
+        android:fontFamily="@font/gabriela"
+        android:text="Saved Amount:"
+        android:textAlignment="textStart"
+        android:textColor="#0D2A56"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/discountResultView"
+        app:layout_constraintEnd_toStartOf="@+id/disountedPrice"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/TextView"
+        app:layout_constraintTop_toBottomOf="@+id/TextView"
+        app:layout_constraintVertical_bias="0.47" />
+
+    <TextView
+        android:id="@+id/saveAmt"
+        android:layout_width="104dp"
+        android:layout_height="31dp"
+        android:fontFamily="@font/gabriela"
+        android:text=" "
+        android:textAlignment="textStart"
+        android:textColor="#0D2A56"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:elevation="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/TextView4"
+        app:layout_constraintEnd_toEndOf="@+id/discountResultView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/TextView"
+        app:layout_constraintTop_toTopOf="@+id/TextView4"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
