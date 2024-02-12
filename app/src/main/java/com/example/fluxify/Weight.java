@@ -12,11 +12,11 @@ import android.widget.TextView;
 
 public class Weight extends AppCompatActivity {
 
-    private EditText weightNo;
-    private Button weightBtn;
-    private TextView result;
+    EditText weightNo;
+    Button weightBtn;
+    TextView result;
     Spinner weightspinner1, weightspinner2;
-    ArrayAdapter<CharSequence> adapter;
+    ArrayAdapter<CharSequence>adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,15 +26,13 @@ public class Weight extends AppCompatActivity {
         weightNo = findViewById(R.id.weightNo);
         weightBtn = findViewById(R.id.weightBtn);
         result = findViewById(R.id.result);
+        weightspinner1 = findViewById(R.id.weightSpinner1);
+        weightspinner2 = findViewById(R.id.weightSpinner2);
 
-        weightspinner1 = (Spinner) findViewById(R.id.weightSpinner1);
         adapter = ArrayAdapter.createFromResource(this, R.array.weight_units, R.layout.spinner_text);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_layout);
+
         weightspinner1.setAdapter(adapter);
-
-        weightspinner2 = (Spinner) findViewById(R.id.weightSpinner2);
-        adapter = ArrayAdapter.createFromResource(this, R.array.weight_units, R.layout.spinner_text);
-        adapter.setDropDownViewResource(R.layout.spinner_dropdown_layout);
         weightspinner2.setAdapter(adapter);
 
         weightBtn.setOnClickListener(new View.OnClickListener() {
@@ -51,15 +49,15 @@ public class Weight extends AppCompatActivity {
             weightNo.setError("Enter Value");
             weightNo.requestFocus();
             return;
+        } else {
+            double inputLength = Double.parseDouble(inputValue);
+            String unitFrom = weightspinner1.getSelectedItem().toString();
+            String unitTo = weightspinner2.getSelectedItem().toString();
+            double convertedWeight = convert(unitFrom, unitTo, inputLength);
+
+            String resultText = String.format("%.2f %s", convertedWeight, unitTo);
+            result.setText(resultText);
         }
-
-        double inputLength = Double.parseDouble(inputValue);
-        String unitFrom = weightspinner1.getSelectedItem().toString();
-        String unitTo = weightspinner2.getSelectedItem().toString();
-        double convertedWeight = convert(unitFrom, unitTo, inputLength);
-
-        String resultText = String.format("%.2f %s", convertedWeight, unitTo);
-        result.setText(resultText);
     }
 
     private double convert(String unitFrom, String unitTo, double inputWeight) {

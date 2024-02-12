@@ -16,11 +16,11 @@ import android.widget.Toast;
 
 public class Area extends AppCompatActivity {
 
-    private EditText areaNo;
-    private Button areaBtn;
-    private TextView result;
+    EditText areaNo;
+    Button areaBtn;
+    TextView result;
     Spinner areaspinner1, areaspinner2;
-    ArrayAdapter<CharSequence> adapter;
+    ArrayAdapter<CharSequence>adapter;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -31,15 +31,13 @@ public class Area extends AppCompatActivity {
         areaNo = findViewById(R.id.areaNo);
         areaBtn = findViewById(R.id.areaBtn);
         result = findViewById(R.id.result);
+        areaspinner1 = findViewById(R.id.areaSpinner1);
+        areaspinner2 = findViewById(R.id.areaSpinner2);
 
-        areaspinner1 = (Spinner) findViewById(R.id.areaSpinner1);
         adapter = ArrayAdapter.createFromResource(this, R.array.area_units, R.layout.spinner_text);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_layout);
+
         areaspinner1.setAdapter(adapter);
-
-        areaspinner2 = (Spinner) findViewById(R.id.areaSpinner2);
-        adapter = ArrayAdapter.createFromResource(this, R.array.area_units, R.layout.spinner_text);
-        adapter.setDropDownViewResource(R.layout.spinner_dropdown_layout);
         areaspinner2.setAdapter(adapter);
 
         areaBtn.setOnClickListener(new View.OnClickListener() {
@@ -56,15 +54,15 @@ public class Area extends AppCompatActivity {
             areaNo.setError("Enter Value");
             areaNo.requestFocus();
             return;
+        } else {
+            double inputLength = Double.parseDouble(inputValue);
+            String unitFrom = areaspinner1.getSelectedItem().toString();
+            String unitTo = areaspinner2.getSelectedItem().toString();
+            double convertedArea = convert(unitFrom, unitTo, inputLength);
+
+            String resultText = String.format("%.2f %s", convertedArea, unitTo);
+            result.setText(resultText);
         }
-
-        double inputLength = Double.parseDouble(inputValue);
-        String unitFrom = areaspinner1.getSelectedItem().toString();
-        String unitTo = areaspinner2.getSelectedItem().toString();
-        double convertedArea = convert(unitFrom, unitTo, inputLength);
-
-        String resultText = String.format("%.2f %s", convertedArea, unitTo);
-        result.setText(resultText);
     }
 
     private double convert(String unitFrom, String unitTo, double inputArea) {

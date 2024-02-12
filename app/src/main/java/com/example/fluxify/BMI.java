@@ -14,15 +14,19 @@ import java.text.DecimalFormat;
 
 public class BMI extends AppCompatActivity {
 
+    EditText bmiWeight, bmiHeight;
+    Button button;
+    TextView bmiResult;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bmi);
 
-        EditText bmiWeight = findViewById(R.id.bmiWeight);
-        EditText bmiHeight = findViewById(R.id.bmiHeight);
-        Button button = findViewById(R.id.bmiBtn);
-        TextView bmiResult = findViewById(R.id.bmiResult);
+        bmiWeight = findViewById(R.id.bmiWeight);
+        bmiHeight = findViewById(R.id.bmiHeight);
+        button = findViewById(R.id.bmiBtn);
+        bmiResult = findViewById(R.id.bmiResult);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

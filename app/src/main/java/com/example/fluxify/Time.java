@@ -13,9 +13,9 @@ import android.widget.TextView;
 
 public class Time extends AppCompatActivity {
 
-    private EditText timeNo;
-    private Button timeBtn;
-    private TextView result;
+    EditText timeNo;
+    Button timeBtn;
+    TextView result;
     Spinner timespinner1, timespinner2;
     ArrayAdapter<CharSequence> adapter;
 
@@ -28,15 +28,13 @@ public class Time extends AppCompatActivity {
         timeNo = findViewById(R.id.timeNo);
         timeBtn = findViewById(R.id.timeBtn);
         result = findViewById(R.id.result);
+        timespinner1 = findViewById(R.id.timeSpinner1);
+        timespinner2 = findViewById(R.id.timeSpinner2);
 
-        timespinner1 = (Spinner) findViewById(R.id.timeSpinner1);
         adapter = ArrayAdapter.createFromResource(this, R.array.time_units, R.layout.spinner_text);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_layout);
+
         timespinner1.setAdapter(adapter);
-
-        timespinner2 = (Spinner) findViewById(R.id.timeSpinner2);
-        adapter = ArrayAdapter.createFromResource(this, R.array.time_units, R.layout.spinner_text);
-        adapter.setDropDownViewResource(R.layout.spinner_dropdown_layout);
         timespinner2.setAdapter(adapter);
 
         timeBtn.setOnClickListener(new View.OnClickListener() {
@@ -53,14 +51,14 @@ public class Time extends AppCompatActivity {
             timeNo.setError("Enter Value");
             timeNo.requestFocus();
             return;
+        } else {
+            double inputVolume = Double.parseDouble(inputValue);
+            String unitFrom = timespinner1.getSelectedItem().toString();
+            String unitTo = timespinner2.getSelectedItem().toString();
+            double convertedTime = convert(unitFrom, unitTo, inputVolume);
+            String resultText = String.format("%.2f %s", convertedTime, unitTo);
+            result.setText(resultText);
         }
-
-        double inputVolume = Double.parseDouble(inputValue);
-        String unitFrom = timespinner1.getSelectedItem().toString();
-        String unitTo = timespinner2.getSelectedItem().toString();
-        double convertedTime = convert(unitFrom, unitTo, inputVolume);
-        String resultText = String.format("%.2f %s", convertedTime, unitTo);
-        result.setText(resultText);
     }
 
     private double convert(String unitFrom, String unitTo, double inputTime) {

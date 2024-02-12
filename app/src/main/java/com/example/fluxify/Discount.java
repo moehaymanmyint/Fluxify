@@ -14,16 +14,20 @@ import android.widget.TextView;
 
 public class Discount extends AppCompatActivity {
 
+    EditText originalPrice, discountAmt;
+    Button button;
+    TextView discountedPrice, saveAmt;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.discount);
 
-        EditText originalPrice = findViewById(R.id.originalPrice);
-        EditText discountAmt = findViewById(R.id.discountAmt);
-        Button button = findViewById(R.id.discountBtn);
-        TextView discountedPrice = findViewById(R.id.disountedPrice);
-        TextView saveAmt = findViewById(R.id.saveAmt);
+        originalPrice = findViewById(R.id.originalPrice);
+        discountAmt = findViewById(R.id.discountAmt);
+        button = findViewById(R.id.discountBtn);
+        discountedPrice = findViewById(R.id.disountedPrice);
+        saveAmt = findViewById(R.id.saveAmt);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,11 +36,11 @@ public class Discount extends AppCompatActivity {
                 String strDiscountAmt = discountAmt.getText().toString();
 
                 if (TextUtils.isEmpty(strOriginalPrice)) {
-                    originalPrice.setError("Enter Weight");
+                    originalPrice.setError("Enter Value");
                     originalPrice.requestFocus();
                 }
                 else if (TextUtils.isEmpty(strDiscountAmt)) {
-                    discountAmt.setError("Enter Height");
+                    discountAmt.setError("Enter Value");
                     discountAmt.requestFocus();
                 }
                 else {

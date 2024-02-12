@@ -13,86 +13,90 @@
         android:theme="@style/Theme.Fluxify"
         tools:targetApi="31">
         <activity
+            android:name=".Zakat"
+            android:exported="false" />
+        <activity
             android:name=".Discount"
             android:exported="false"
-            android:parentActivityName=".ConversionCalculatorScreen"
-            android:label=" "/>
+            android:label=" "
+            android:parentActivityName=".ConversionCalculatorScreen" />
         <activity
             android:name=".Age"
             android:exported="false"
-            android:parentActivityName=".ConversionCalculatorScreen"
-            android:label=" "/>
+            android:label=" "
+            android:parentActivityName=".ConversionCalculatorScreen" />
         <activity
             android:name=".Temperature"
             android:exported="false"
-            android:parentActivityName=".ConversionCalculatorScreen"
-            android:label=" "/>
+            android:label=" "
+            android:parentActivityName=".ConversionCalculatorScreen" />
         <activity
             android:name=".BMR"
             android:exported="false"
-            android:parentActivityName=".HealthCalculatorScreen"
-            android:label=" "/>
+            android:label=" "
+            android:parentActivityName=".HealthCalculatorScreen" />
         <activity
             android:name=".BMI"
             android:exported="false"
-            android:parentActivityName=".HealthCalculatorScreen"
-            android:label=" "/>
+            android:label=" "
+            android:parentActivityName=".HealthCalculatorScreen" />
         <activity
             android:name=".Time"
             android:exported="false"
-            android:parentActivityName=".CommonConverterScreen"
-            android:label=" "/>
+            android:label=" "
+            android:parentActivityName=".CommonConverterScreen" />
         <activity
             android:name=".Speed"
             android:exported="false"
-            android:parentActivityName=".CommonConverterScreen"
-            android:label=" "/>
+            android:label=" "
+            android:parentActivityName=".CommonConverterScreen" />
         <activity
             android:name=".Volume"
             android:exported="false"
-            android:parentActivityName=".CommonConverterScreen"
-            android:label=" "/>
+            android:label=" "
+            android:parentActivityName=".CommonConverterScreen" />
         <activity
             android:name=".Weight"
             android:exported="false"
-            android:parentActivityName=".CommonConverterScreen"
-            android:label=" "/>
+            android:label=" "
+            android:parentActivityName=".CommonConverterScreen" />
         <activity
             android:name=".Area"
             android:exported="false"
-            android:parentActivityName=".CommonConverterScreen"
-            android:label=" "/>
+            android:label=" "
+            android:parentActivityName=".CommonConverterScreen" />
         <activity
             android:name=".Length"
             android:exported="false"
-            android:parentActivityName=".CommonConverterScreen"
-            android:label=" "/>
+            android:label=" "
+            android:parentActivityName=".CommonConverterScreen" />
         <activity
             android:name=".HealthCalculatorScreen"
             android:exported="false"
-            android:parentActivityName=".MainScreen"
-            android:label=" "/>
+            android:label=" "
+            android:parentActivityName=".MainScreen" />
         <activity
             android:name=".ConversionCalculatorScreen"
             android:exported="false"
-            android:parentActivityName=".MainScreen"
-            android:label=" "/>
+            android:label=" "
+            android:parentActivityName=".MainScreen" />
         <activity
             android:name=".CommonConverterScreen"
             android:exported="false"
-            android:theme="@style/Theme.Fluxify"
+            android:label=" "
             android:parentActivityName=".MainScreen"
-            android:label=" "/>
+            android:theme="@style/Theme.Fluxify" />
         <activity
             android:name=".MainScreen"
             android:exported="false"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SplashScreen"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

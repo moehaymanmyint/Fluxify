@@ -9,9 +9,9 @@ import android.view.View;
 
 public class ConversionCalculatorScreen extends AppCompatActivity {
 
-    private View tempBtn;
-    private View ageBtn;
-    private View discountBtn;
+    View tempBtn;
+    View ageBtn;
+    View discountBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +48,7 @@ public class ConversionCalculatorScreen extends AppCompatActivity {
             }
         });
     }
+
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             finish();

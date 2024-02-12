@@ -15,11 +15,8 @@ public class SplashScreen extends AppCompatActivity {
 
     public static int SPLASH_TIMER = 3000;
 
-    //Variables
     ImageView logoImg;
     TextView logoName, appName, tagline;
-
-    //Animation
     Animation sideAnim, bottomAnim;
 
     @SuppressLint("MissingInflatedId")
@@ -28,17 +25,14 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
 
-        //Hooks
         logoImg = findViewById(R.id.logoImg);
         logoName = findViewById(R.id.logoName);
         appName = findViewById(R.id.appName);
         tagline = findViewById(R.id.tagline);
 
-        //Animations
         sideAnim = AnimationUtils.loadAnimation(this,R.anim.side_anim);
         bottomAnim = AnimationUtils.loadAnimation(this,R.anim.bottom_anim);
 
-        //set Animations on elements
         logoImg.setAnimation(sideAnim);
         logoName.setAnimation(bottomAnim);
         appName.setAnimation(bottomAnim);

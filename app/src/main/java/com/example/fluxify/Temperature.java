@@ -13,12 +13,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Temperature extends AppCompatActivity {
 
-    private EditText tempNo;
-    private Spinner tempSpinner1, tempSpinner2;
-    private Button tempBtn;
-    private TextView result;
-
-    private ArrayAdapter<CharSequence> adapter;
+    EditText tempNo;
+    Spinner tempSpinner1, tempSpinner2;
+    Button tempBtn;
+    TextView result;
+    ArrayAdapter<CharSequence>adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,19 +25,15 @@ public class Temperature extends AppCompatActivity {
         setContentView(R.layout.temperature);
 
         tempNo = findViewById(R.id.tempNo);
-        tempSpinner1 = findViewById(R.id.tempSpinner1);
-        tempSpinner2 = findViewById(R.id.tempSpinner2);
         tempBtn = findViewById(R.id.tempBtn);
         result = findViewById(R.id.result);
+        tempSpinner1 = findViewById(R.id.tempSpinner1);
+        tempSpinner2 = findViewById(R.id.tempSpinner2);
 
-        tempSpinner1 = (Spinner) findViewById(R.id.tempSpinner1);
         adapter = ArrayAdapter.createFromResource(this, R.array.temp_units, R.layout.spinner_text);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_layout);
+
         tempSpinner1.setAdapter(adapter);
-
-        tempSpinner2 = (Spinner) findViewById(R.id.tempSpinner2);
-        adapter = ArrayAdapter.createFromResource(this, R.array.temp_units, R.layout.spinner_text);
-        adapter.setDropDownViewResource(R.layout.spinner_dropdown_layout);
         tempSpinner2.setAdapter(adapter);
 
         tempBtn.setOnClickListener(new View.OnClickListener() {
@@ -55,14 +50,15 @@ public class Temperature extends AppCompatActivity {
             tempNo.setError("Enter Value");
             tempNo.requestFocus();
             return;
+        } else {
+            double inputTemperature = Double.parseDouble(inputValue);
+            String unitFrom = tempSpinner1.getSelectedItem().toString();
+            String unitTo = tempSpinner2.getSelectedItem().toString();
+            double convertedTemperature = convert(unitFrom, unitTo, inputTemperature);
+
+            String resultText = String.format("%.2f %s", convertedTemperature, unitTo);
+            result.setText(resultText);
         }
-
-        double inputTemperature = Double.parseDouble(inputValue);
-        String unitFrom = tempSpinner1.getSelectedItem().toString();
-        String unitTo = tempSpinner2.getSelectedItem().toString();
-        double convertedTemperature = convert(unitFrom, unitTo, inputTemperature);
-
-        result.setText(String.format("%.2f %s", convertedTemperature, unitTo));
     }
 
     private double convert(String unitFrom, String unitTo, double inputTemperature) {

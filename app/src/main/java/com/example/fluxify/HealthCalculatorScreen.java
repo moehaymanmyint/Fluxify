@@ -9,8 +9,8 @@ import android.view.View;
 
 public class HealthCalculatorScreen extends AppCompatActivity {
 
-    private View bmiBtn;
-    private View bmrBtn;
+    View bmiBtn;
+    View bmrBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +38,7 @@ public class HealthCalculatorScreen extends AppCompatActivity {
             }
         });
     }
+
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             finish();

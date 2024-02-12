@@ -11,12 +11,12 @@ import android.widget.Toolbar;
 
 public class CommonConverterScreen extends AppCompatActivity {
 
-    private View lengthBtn;
-    private View areaBtn;
-    private View weightBtn;
-    private View volumeBtn;
-    private View speedBtn;
-    private View timeBtn;
+    View lengthBtn;
+    View areaBtn;
+    View weightBtn;
+    View volumeBtn;
+    View speedBtn;
+    View timeBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +39,7 @@ public class CommonConverterScreen extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         areaBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,6 +47,7 @@ public class CommonConverterScreen extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         weightBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,6 +55,7 @@ public class CommonConverterScreen extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         volumeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,6 +63,7 @@ public class CommonConverterScreen extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         speedBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,6 +71,7 @@ public class CommonConverterScreen extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         timeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,6 +80,7 @@ public class CommonConverterScreen extends AppCompatActivity {
             }
         });
     }
+
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             finish();

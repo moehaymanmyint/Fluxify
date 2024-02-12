@@ -13,11 +13,11 @@ import android.widget.TextView;
 
 public class Volume extends AppCompatActivity {
 
-    private EditText volumeNo;
-    private Button volumeBtn;
-    private TextView result;
+    EditText volumeNo;
+    Button volumeBtn;
+    TextView result;
     Spinner volumespinner1, volumespinner2;
-    ArrayAdapter<CharSequence> adapter;
+    ArrayAdapter<CharSequence>adapter;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -28,15 +28,13 @@ public class Volume extends AppCompatActivity {
         volumeNo = findViewById(R.id.volumeNo);
         volumeBtn = findViewById(R.id.volumeBtn);
         result = findViewById(R.id.result);
+        volumespinner1 = findViewById(R.id.volumeSpinner1);
+        volumespinner2 = findViewById(R.id.volumeSpinner2);
 
-        volumespinner1 = (Spinner) findViewById(R.id.volumeSpinner1);
         adapter = ArrayAdapter.createFromResource(this, R.array.volume_units, R.layout.spinner_text);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_layout);
+
         volumespinner1.setAdapter(adapter);
-
-        volumespinner2 = (Spinner) findViewById(R.id.volumeSpinner2);
-        adapter = ArrayAdapter.createFromResource(this, R.array.volume_units, R.layout.spinner_text);
-        adapter.setDropDownViewResource(R.layout.spinner_dropdown_layout);
         volumespinner2.setAdapter(adapter);
         
         volumeBtn.setOnClickListener(new View.OnClickListener() {
@@ -53,15 +51,15 @@ public class Volume extends AppCompatActivity {
             volumeNo.setError("Enter Value");
             volumeNo.requestFocus();
             return;
+        } else {
+            double inputVolume = Double.parseDouble(inputValue);
+            String unitFrom = volumespinner1.getSelectedItem().toString();
+            String unitTo = volumespinner2.getSelectedItem().toString();
+            double convertedVolume = convert(unitFrom, unitTo, inputVolume);
+
+            String resultText = String.format("%.2f %s", convertedVolume, unitTo);
+            result.setText(resultText);
         }
-
-        double inputVolume = Double.parseDouble(inputValue);
-        String unitFrom = volumespinner1.getSelectedItem().toString();
-        String unitTo = volumespinner2.getSelectedItem().toString();
-        double convertedVolume = convert(unitFrom, unitTo, inputVolume);
-
-        String resultText = String.format("%.2f %s", convertedVolume, unitTo);
-        result.setText(resultText);
     }
 
     private double convert(String unitFrom, String unitTo, double inputVolume) {

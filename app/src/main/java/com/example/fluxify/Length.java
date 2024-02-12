@@ -19,11 +19,11 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class Length extends AppCompatActivity {
 
-    private EditText lengthNo;
-    private Button lengthBtn;
-    private TextView result;
+    EditText lengthNo;
+    Button lengthBtn;
+    TextView result;
     Spinner lengthspinner1, lengthspinner2;
-    ArrayAdapter<CharSequence> adapter;
+    ArrayAdapter<CharSequence>adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,15 +33,13 @@ public class Length extends AppCompatActivity {
         lengthNo = findViewById(R.id.lengthNo);
         lengthBtn = findViewById(R.id.lengthbBtn);
         result = findViewById(R.id.result);
+        lengthspinner1 = findViewById(R.id.lengthSpinner1);
+        lengthspinner2 = findViewById(R.id.lengthSpinner2);
 
-        lengthspinner1 = (Spinner) findViewById(R.id.lengthSpinner1);
         adapter = ArrayAdapter.createFromResource(this, R.array.length_units, R.layout.spinner_text);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_layout);
+
         lengthspinner1.setAdapter(adapter);
-
-        lengthspinner2 = (Spinner) findViewById(R.id.lengthSpinner2);
-        adapter = ArrayAdapter.createFromResource(this, R.array.length_units, R.layout.spinner_text);
-        adapter.setDropDownViewResource(R.layout.spinner_dropdown_layout);
         lengthspinner2.setAdapter(adapter);
 
         lengthBtn.setOnClickListener(new View.OnClickListener() {
@@ -58,15 +56,15 @@ public class Length extends AppCompatActivity {
             lengthNo.setError("Enter Value");
             lengthNo.requestFocus();
             return;
-        }
-        
-        double inputLength = Double.parseDouble(inputValue);
-        String unitFrom = lengthspinner1.getSelectedItem().toString();
-        String unitTo = lengthspinner2.getSelectedItem().toString();
-        double convertedLength = convert(unitFrom, unitTo, inputLength);
+        } else {
+            double inputLength = Double.parseDouble(inputValue);
+            String unitFrom = lengthspinner1.getSelectedItem().toString();
+            String unitTo = lengthspinner2.getSelectedItem().toString();
+            double convertedLength = convert(unitFrom, unitTo, inputLength);
 
-        String resultText = String.format("%.2f %s", convertedLength, unitTo);
-        result.setText(resultText);
+            String resultText = String.format("%.2f %s", convertedLength, unitTo);
+            result.setText(resultText);
+        }
     }
 
     private double convert(String unitFrom, String unitTo, double inputLength) {

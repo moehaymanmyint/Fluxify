@@ -20,7 +20,6 @@ public class BMR extends AppCompatActivity {
     TextView result;
     LinearLayout maleLayout, femaleLayout;
     ImageView mimg,fimg;
-    double h = 0, w = 0, a = 0, bmr = 0;
     String user = "0";
 
     @Override
@@ -39,7 +38,6 @@ public class BMR extends AppCompatActivity {
         fimg = findViewById(R.id.femaleImg);
 
         maleLayout.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("ResourceType")
             @Override
             public void onClick(View v) {
                 mimg.setColorFilter(getResources().getColor(R.color.tab));
@@ -48,7 +46,6 @@ public class BMR extends AppCompatActivity {
             }
         });
         femaleLayout.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("ResourceType")
             @Override
             public void onClick(View v) {
                 mimg.setColorFilter(getResources().getColor(R.color.black));
@@ -88,18 +85,27 @@ public class BMR extends AppCompatActivity {
         });
     }
 
-    private void calculate(){
-        h = Double.parseDouble(height.getText().toString());
-        w = Double.parseDouble(weight.getText().toString());
-        a = Double.parseDouble(age.getText().toString());
+    private void calculate() {
+        try {
+            double h = Double.parseDouble(height.getText().toString());
+            double w = Double.parseDouble(weight.getText().toString());
+            double a = Double.parseDouble(age.getText().toString());
 
-        if (user.equals("Male")){
-            bmr = ((10 * w) + (6.25 * h) - (5 * a) + 5);
-            result.setText(Double.toString(bmr));
-        }
-        if (user.equals("Female")){
-            bmr = ((10 * w) + (6.25 * h) - (5 * a) - 161);
-            result.setText(Double.toString(bmr));
+            double bmrResult;
+
+            if (user.equals("Male")) {
+                bmrResult = ((10 * w) + (6.25 * h) - (5 * a) + 5);
+            } else if (user.equals("Female")) {
+                bmrResult = ((10 * w) + (6.25 * h) - (5 * a) - 161);
+            } else {
+                Toast.makeText(BMR.this, "Select your Gender", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            result.setText(String.valueOf(bmrResult));
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+            Toast.makeText(BMR.this, "Invalid input. Please enter valid numbers.", Toast.LENGTH_SHORT).show();
         }
     }
+
 }

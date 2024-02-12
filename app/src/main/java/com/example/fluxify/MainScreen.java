@@ -9,15 +9,15 @@ import android.view.View;
 
 public class MainScreen extends AppCompatActivity {
 
-    private View commonBtn;
-    private View conversionBtn;
-    private View healthBtn;
+    View commonBtn;
+    View conversionBtn;
+    View healthBtn;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_screen);
+
         commonBtn = findViewById(R.id.commonButton);
         conversionBtn = findViewById(R.id.conversionButton);
         healthBtn = findViewById(R.id.healthButton);
@@ -29,6 +29,7 @@ public class MainScreen extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         conversionBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -36,6 +37,7 @@ public class MainScreen extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         healthBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {

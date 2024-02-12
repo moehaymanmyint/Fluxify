@@ -13,9 +13,9 @@ import android.widget.TextView;
 
 public class Speed extends AppCompatActivity {
 
-    private EditText speedNo;
-    private Button speedBtn;
-    private TextView result;
+    EditText speedNo;
+    Button speedBtn;
+    TextView result;
     Spinner speedspinner1, speedspinner2;
     ArrayAdapter<CharSequence> adapter;
 
@@ -28,15 +28,13 @@ public class Speed extends AppCompatActivity {
         speedNo = findViewById(R.id.speedNo);
         speedBtn = findViewById(R.id.speedBtn);
         result = findViewById(R.id.result);
+        speedspinner1 = findViewById(R.id.speedSpinner1);
+        speedspinner2 = findViewById(R.id.speedSpinner2);
 
-        speedspinner1 = (Spinner) findViewById(R.id.speedSpinner1);
         adapter = ArrayAdapter.createFromResource(this, R.array.speed_units, R.layout.spinner_text);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_layout);
+
         speedspinner1.setAdapter(adapter);
-
-        speedspinner2 = (Spinner) findViewById(R.id.speedSpinner2);
-        adapter = ArrayAdapter.createFromResource(this, R.array.speed_units, R.layout.spinner_text);
-        adapter.setDropDownViewResource(R.layout.spinner_dropdown_layout);
         speedspinner2.setAdapter(adapter);
 
         speedBtn.setOnClickListener(new View.OnClickListener() {
@@ -53,15 +51,15 @@ public class Speed extends AppCompatActivity {
             speedNo.setError("Enter Value");
             speedNo.requestFocus();
             return;
+        } else {
+            double inputVolume = Double.parseDouble(inputValue);
+            String unitFrom = speedspinner1.getSelectedItem().toString();
+            String unitTo = speedspinner2.getSelectedItem().toString();
+            double convertedSpeed = convert(unitFrom, unitTo, inputVolume);
+
+            String resultText = String.format("%.2f %s", convertedSpeed, unitTo);
+            result.setText(resultText);
         }
-
-        double inputVolume = Double.parseDouble(inputValue);
-        String unitFrom = speedspinner1.getSelectedItem().toString();
-        String unitTo = speedspinner2.getSelectedItem().toString();
-        double convertedSpeed = convert(unitFrom, unitTo, inputVolume);
-
-        String resultText = String.format("%.2f %s", convertedSpeed, unitTo);
-        result.setText(resultText);
     }
 
     private double convert(String unitFrom, String unitTo, double inputSpeed) {
