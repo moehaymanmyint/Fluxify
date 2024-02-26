@@ -55,13 +55,18 @@ public class Area extends AppCompatActivity {
             areaNo.requestFocus();
             return;
         } else {
-            double inputLength = Double.parseDouble(inputValue);
-            String unitFrom = areaspinner1.getSelectedItem().toString();
-            String unitTo = areaspinner2.getSelectedItem().toString();
-            double convertedArea = convert(unitFrom, unitTo, inputLength);
+            double inputArea = Double.parseDouble(inputValue);
 
-            String resultText = String.format("%.2f %s", convertedArea, unitTo);
-            result.setText(resultText);
+            if (inputArea <= 0.0) {
+                Toast.makeText(Area.this, "Invalid Input. Please enter valid values.", Toast.LENGTH_SHORT).show();
+            } else {
+                String unitFrom = areaspinner1.getSelectedItem().toString();
+                String unitTo = areaspinner2.getSelectedItem().toString();
+                double convertedArea = convert(unitFrom, unitTo, inputArea);
+
+                String resultText = String.format("%.2f %s", convertedArea, unitTo);
+                result.setText(resultText);
+            }
         }
     }
 

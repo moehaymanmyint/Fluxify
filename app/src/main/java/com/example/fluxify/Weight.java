@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Weight extends AppCompatActivity {
 
@@ -50,13 +51,18 @@ public class Weight extends AppCompatActivity {
             weightNo.requestFocus();
             return;
         } else {
-            double inputLength = Double.parseDouble(inputValue);
-            String unitFrom = weightspinner1.getSelectedItem().toString();
-            String unitTo = weightspinner2.getSelectedItem().toString();
-            double convertedWeight = convert(unitFrom, unitTo, inputLength);
+            double inputWeight = Double.parseDouble(inputValue);
 
-            String resultText = String.format("%.2f %s", convertedWeight, unitTo);
-            result.setText(resultText);
+            if (inputWeight <= 0.0) {
+                Toast.makeText(Weight.this, "Invalid Input. Please enter valid values.", Toast.LENGTH_SHORT).show();
+            } else {
+                String unitFrom = weightspinner1.getSelectedItem().toString();
+                String unitTo = weightspinner2.getSelectedItem().toString();
+                double convertedWeight = convert(unitFrom, unitTo, inputWeight);
+
+                String resultText = String.format("%.2f %s", convertedWeight, unitTo);
+                result.setText(resultText);
+            }
         }
     }
 

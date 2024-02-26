@@ -17,7 +17,7 @@ public class BMR extends AppCompatActivity {
 
     Button btn;
     EditText weight, height, age;
-    TextView result;
+    TextView result, bmrInfo;
     LinearLayout maleLayout, femaleLayout;
     ImageView mimg,fimg;
     String user = "0";
@@ -32,6 +32,7 @@ public class BMR extends AppCompatActivity {
         height = findViewById(R.id.bmrHeight);
         age = findViewById(R.id.bmrAge);
         result = findViewById(R.id.bmrResult);
+        bmrInfo = findViewById(R.id.bmrInfo);
         maleLayout = findViewById(R.id.male);
         femaleLayout = findViewById(R.id.female);
         mimg = findViewById(R.id.maleImg);
@@ -102,10 +103,25 @@ public class BMR extends AppCompatActivity {
                 return;
             }
             result.setText(String.valueOf(bmrResult));
+            displayBMRInfo(bmrResult);
         } catch (NumberFormatException e) {
             e.printStackTrace();
             Toast.makeText(BMR.this, "Invalid input. Please enter valid numbers.", Toast.LENGTH_SHORT).show();
         }
     }
-
+    private void displayBMRInfo(double bmrResult) {
+        String bmrInfoText;
+        if (bmrResult < 1487) {
+            bmrInfoText = "Sedentary \n(Little or No exercise)";
+        } else if (bmrResult < 1704) {
+            bmrInfoText = "Lightly Active \n(Light exercise)";
+        } else if (bmrResult < 1920) {
+            bmrInfoText = "Moderately Active \n(Moderate exercise)";
+        } else if (bmrResult < 2137) {
+            bmrInfoText = "Very Active \n(Hard exercise)";
+        } else {
+            bmrInfoText = "Extra Active \n(Very hard exercise)";
+        }
+        bmrInfo.setText(bmrInfoText);
+    }
 }

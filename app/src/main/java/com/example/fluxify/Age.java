@@ -49,30 +49,50 @@ public class Age extends AppCompatActivity {
 
     private void calculateAge() {
         String birthDateStr = birthDate.getText().toString();
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        SimpleDateFormat sdfInput = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
 
         if (TextUtils.isEmpty(birthDateStr)) {
-            birthDate.setError("Please select a valid birth date.");
+            birthDate.setError("Select your Birth Date.");
             return;
         }
 
         try {
-            Date birthDate = sdf.parse(birthDateStr);
-            Date currentDate = new Date();
+            Date selectDate = sdfInput.parse(birthDateStr);
 
-            long diffInMillis = currentDate.getTime() - birthDate.getTime();
-            long ageInMillis = diffInMillis;
+            if (selectDate == null) {
+                birthDate.setError("Invalid Date, Please enter dd/mm/yyyy");
+                return;
+            }
 
-            int day = (int) (diffInMillis / (1000 * 60 * 60 * 24));
-            int year = day / 365;
-            int month = (int) ((day % 365) / 30.44);
+            if (selectDate.after(new Date())) {
+                birthDate.setError("Invalid Date, Please enter a past date");
+                return;
+            }
 
-            day = (int) (day % 30.44);
+            Calendar birthDateCalendar = Calendar.getInstance();
+            birthDateCalendar.setTime(selectDate);
+
+            Calendar currentDateCalendar = Calendar.getInstance();
+
+            int year = currentDateCalendar.get(Calendar.YEAR) - birthDateCalendar.get(Calendar.YEAR);
+            int month = currentDateCalendar.get(Calendar.MONTH) - birthDateCalendar.get(Calendar.MONTH);
+            int day = currentDateCalendar.get(Calendar.DAY_OF_MONTH) - birthDateCalendar.get(Calendar.DAY_OF_MONTH);
+
+            if (day < 0) {
+                month--;
+                int daysInMonth = birthDateCalendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+                day += daysInMonth;
+            }
+            if (month < 0) {
+                year--;
+                month += 12;
+            }
+
             String age = year + " Years, " + month + " Months, " + day + " Days";
             result.setText(age);
-        } catch (Exception e) {
+        } catch (ParseException e) {
             e.printStackTrace();
-            birthDate.setError("Invalid date format. Please select a valid date.");
+            birthDate.setError("Invalid date format. Please enter mm/dd/yyyy");
         }
     }
 

@@ -224,10 +224,9 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/bmr"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/bmr"
         app:layout_constraintTop_toBottomOf="@+id/bmr"
-        app:layout_constraintVertical_bias="0.48" />
+        app:layout_constraintVertical_bias="0.448" />
 
     <View
         android:id="@+id/bmrResultView"
@@ -241,42 +240,63 @@
         android:elevation="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bmrBtn"
-        app:layout_constraintVertical_bias="0.428" />
+        app:layout_constraintVertical_bias="0.422" />
 
     <TextView
         android:id="@+id/TextView"
-        android:layout_width="192dp"
-        android:layout_height="31dp"
+        android:layout_width="120dp"
+        android:layout_height="33dp"
+        android:elevation="15dp"
         android:fontFamily="@font/gabriela"
         android:text="Your BMR:"
         android:textAlignment="center"
         android:textColor="#0D2A56"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:elevation="15dp"
         app:layout_constraintBottom_toBottomOf="@+id/bmrResultView"
         app:layout_constraintEnd_toEndOf="@+id/bmrResultView"
+        app:layout_constraintHorizontal_bias="0.121"
         app:layout_constraintStart_toStartOf="@+id/bmrResultView"
         app:layout_constraintTop_toTopOf="@+id/bmrResultView"
-        app:layout_constraintVertical_bias="0.262" />
+        app:layout_constraintVertical_bias="0.224" />
 
     <TextView
         android:id="@+id/bmrResult"
-        android:layout_width="192dp"
-        android:layout_height="31dp"
+        android:layout_width="176dp"
+        android:layout_height="32dp"
+        android:elevation="15dp"
         android:fontFamily="@font/gabriela"
         android:text="0.00"
         android:textAlignment="center"
         android:textColor="#0D2A56"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:elevation="15dp"
         app:layout_constraintBottom_toBottomOf="@+id/bmrResultView"
-        app:layout_constraintEnd_toEndOf="@+id/TextView"
+        app:layout_constraintEnd_toEndOf="@+id/bmrResultView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/TextView"
+        app:layout_constraintTop_toTopOf="@+id/bmrResultView"
+        app:layout_constraintVertical_bias="0.232" />
+
+    <TextView
+        android:id="@+id/bmrInfo"
+        android:layout_width="272dp"
+        android:layout_height="65dp"
+        android:elevation="15dp"
+        android:fontFamily="@font/gabriela"
+        android:text=" "
+        android:textAlignment="center"
+        android:textColor="#0D2A56"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/bmrResultView"
+        app:layout_constraintEnd_toEndOf="@+id/bmrResult"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/TextView"
-        app:layout_constraintTop_toBottomOf="@+id/TextView" />
+        app:layout_constraintTop_toBottomOf="@+id/TextView"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

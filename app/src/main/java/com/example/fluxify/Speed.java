@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Speed extends AppCompatActivity {
 
@@ -52,13 +53,18 @@ public class Speed extends AppCompatActivity {
             speedNo.requestFocus();
             return;
         } else {
-            double inputVolume = Double.parseDouble(inputValue);
-            String unitFrom = speedspinner1.getSelectedItem().toString();
-            String unitTo = speedspinner2.getSelectedItem().toString();
-            double convertedSpeed = convert(unitFrom, unitTo, inputVolume);
+            double inputSpeed = Double.parseDouble(inputValue);
 
-            String resultText = String.format("%.2f %s", convertedSpeed, unitTo);
-            result.setText(resultText);
+            if (inputSpeed <= 0.0) {
+                Toast.makeText(Speed.this, "Invalid Input. Please enter valid values.", Toast.LENGTH_SHORT).show();
+            } else {
+                String unitFrom = speedspinner1.getSelectedItem().toString();
+                String unitTo = speedspinner2.getSelectedItem().toString();
+                double convertedSpeed = convert(unitFrom, unitTo, inputSpeed);
+
+                String resultText = String.format("%.2f %s", convertedSpeed, unitTo);
+                result.setText(resultText);
+            }
         }
     }
 

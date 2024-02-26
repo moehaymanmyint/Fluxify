@@ -13,9 +13,6 @@
         android:theme="@style/Theme.Fluxify"
         tools:targetApi="31">
         <activity
-            android:name=".Zakat"
-            android:exported="false" />
-        <activity
             android:name=".Discount"
             android:exported="false"
             android:label=" "

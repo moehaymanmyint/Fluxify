@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Time extends AppCompatActivity {
 
@@ -52,12 +53,17 @@ public class Time extends AppCompatActivity {
             timeNo.requestFocus();
             return;
         } else {
-            double inputVolume = Double.parseDouble(inputValue);
-            String unitFrom = timespinner1.getSelectedItem().toString();
-            String unitTo = timespinner2.getSelectedItem().toString();
-            double convertedTime = convert(unitFrom, unitTo, inputVolume);
-            String resultText = String.format("%.2f %s", convertedTime, unitTo);
-            result.setText(resultText);
+            double inputTime = Double.parseDouble(inputValue);
+
+            if (inputTime <= 0.0) {
+                Toast.makeText(Time.this, "Invalid Input. Please enter valid values.", Toast.LENGTH_SHORT).show();
+            } else {
+                String unitFrom = timespinner1.getSelectedItem().toString();
+                String unitTo = timespinner2.getSelectedItem().toString();
+                double convertedTime = convert(unitFrom, unitTo, inputTime);
+                String resultText = String.format("%.2f %s", convertedTime, unitTo);
+                result.setText(resultText);
+            }
         }
     }
 

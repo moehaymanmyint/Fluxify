@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -52,26 +53,28 @@ public class Temperature extends AppCompatActivity {
             return;
         } else {
             double inputTemperature = Double.parseDouble(inputValue);
-            String unitFrom = tempSpinner1.getSelectedItem().toString();
-            String unitTo = tempSpinner2.getSelectedItem().toString();
-            double convertedTemperature = convert(unitFrom, unitTo, inputTemperature);
 
-            String resultText = String.format("%.2f %s", convertedTemperature, unitTo);
-            result.setText(resultText);
+            if (inputTemperature <= 0.0) {
+                Toast.makeText(Temperature.this, "Invalid Input. Please enter valid values.", Toast.LENGTH_SHORT).show();
+            } else {
+                String unitFrom = tempSpinner1.getSelectedItem().toString();
+                String unitTo = tempSpinner2.getSelectedItem().toString();
+                double convertedTemperature = convert(unitFrom, unitTo, inputTemperature);
+
+                String resultText = String.format("%.2f %s", convertedTemperature, unitTo);
+                result.setText(resultText);
+            }
         }
     }
 
     private double convert(String unitFrom, String unitTo, double inputTemperature) {
         if (unitFrom.equals("°F") && unitTo.equals("°C")) {
             return (inputTemperature - 32) * 5.0 / 9.0;
-        }
-        else if (unitFrom.equals("°C") && unitTo.equals("°F")) {
+        } else if (unitFrom.equals("°C") && unitTo.equals("°F")) {
             return (inputTemperature * 9.0 / 5.0) + 32;
-        }
-        else if (unitFrom.equals(unitTo)) {
+        } else if (unitFrom.equals(unitTo)) {
             return inputTemperature;
-        }
-        else {
+        } else {
             return 0.0;
         }
     }

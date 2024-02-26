@@ -58,12 +58,17 @@ public class Length extends AppCompatActivity {
             return;
         } else {
             double inputLength = Double.parseDouble(inputValue);
-            String unitFrom = lengthspinner1.getSelectedItem().toString();
-            String unitTo = lengthspinner2.getSelectedItem().toString();
-            double convertedLength = convert(unitFrom, unitTo, inputLength);
 
-            String resultText = String.format("%.2f %s", convertedLength, unitTo);
-            result.setText(resultText);
+            if (inputLength <= 0.0) {
+                Toast.makeText(Length.this, "Invalid Input. Please enter valid values.", Toast.LENGTH_SHORT).show();
+            } else {
+                String unitFrom = lengthspinner1.getSelectedItem().toString();
+                String unitTo = lengthspinner2.getSelectedItem().toString();
+                double convertedLength = convert(unitFrom, unitTo, inputLength);
+
+                String resultText = String.format("%.2f %s", convertedLength, unitTo);
+                result.setText(resultText);
+            }
         }
     }
 

@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Volume extends AppCompatActivity {
 
@@ -53,12 +54,17 @@ public class Volume extends AppCompatActivity {
             return;
         } else {
             double inputVolume = Double.parseDouble(inputValue);
-            String unitFrom = volumespinner1.getSelectedItem().toString();
-            String unitTo = volumespinner2.getSelectedItem().toString();
-            double convertedVolume = convert(unitFrom, unitTo, inputVolume);
 
-            String resultText = String.format("%.2f %s", convertedVolume, unitTo);
-            result.setText(resultText);
+            if (inputVolume <= 0.0) {
+                Toast.makeText(Volume.this, "Invalid Input. Please enter valid values.", Toast.LENGTH_SHORT).show();
+            } else {
+                String unitFrom = volumespinner1.getSelectedItem().toString();
+                String unitTo = volumespinner2.getSelectedItem().toString();
+                double convertedVolume = convert(unitFrom, unitTo, inputVolume);
+
+                String resultText = String.format("%.2f %s", convertedVolume, unitTo);
+                result.setText(resultText);
+            }
         }
     }
 
