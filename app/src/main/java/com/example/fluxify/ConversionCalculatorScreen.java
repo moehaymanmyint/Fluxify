@@ -9,6 +9,7 @@ import android.view.View;
 
 public class ConversionCalculatorScreen extends AppCompatActivity {
 
+    // Declare UI elements
     View tempBtn;
     View ageBtn;
     View discountBtn;
@@ -18,12 +19,15 @@ public class ConversionCalculatorScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.conversion_calculator_screen);
 
+        // Enable the back button in the action bar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        // Initialize UI elements
         tempBtn = findViewById(R.id.tempView);
         ageBtn = findViewById(R.id.ageView);
         discountBtn = findViewById(R.id.discountView);
 
+        // Set on click listeners for each conversion converter category
         tempBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -49,6 +53,7 @@ public class ConversionCalculatorScreen extends AppCompatActivity {
         });
     }
 
+    // Handle the back button click in the action bar
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             finish();

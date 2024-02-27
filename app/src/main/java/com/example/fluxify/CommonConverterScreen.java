@@ -11,6 +11,7 @@ import android.widget.Toolbar;
 
 public class CommonConverterScreen extends AppCompatActivity {
 
+    // Declare UI elements
     View lengthBtn;
     View areaBtn;
     View weightBtn;
@@ -23,8 +24,10 @@ public class CommonConverterScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.common_converter_screen);
 
+        // Enable the back button in the action bar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        // Initialize UI elements
         lengthBtn = findViewById(R.id.lengthView);
         areaBtn = findViewById(R.id.areaView);
         weightBtn = findViewById(R.id.weightView);
@@ -32,6 +35,7 @@ public class CommonConverterScreen extends AppCompatActivity {
         speedBtn = findViewById(R.id.speedView);
         timeBtn = findViewById(R.id.timeView);
 
+        // Set on click listeners for each common converter category
         lengthBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,6 +85,7 @@ public class CommonConverterScreen extends AppCompatActivity {
         });
     }
 
+    // Handle the back button click in the action bar
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             finish();

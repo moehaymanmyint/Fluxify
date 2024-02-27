@@ -9,6 +9,7 @@ import android.view.View;
 
 public class HealthCalculatorScreen extends AppCompatActivity {
 
+    // Declare UI elements
     View bmiBtn;
     View bmrBtn;
 
@@ -17,11 +18,14 @@ public class HealthCalculatorScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.health_calculator_screen);
 
+        // Enable the back button in the action bar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        // Initialize UI elements
         bmiBtn = findViewById(R.id.bmiView);
         bmrBtn = findViewById(R.id.bmrView);
 
+        // Set on click listeners for each health converter category
         bmiBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -39,6 +43,7 @@ public class HealthCalculatorScreen extends AppCompatActivity {
         });
     }
 
+    // Handle the back button click in the action bar
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             finish();

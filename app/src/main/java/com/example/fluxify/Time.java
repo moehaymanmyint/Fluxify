@@ -14,30 +14,34 @@ import android.widget.Toast;
 
 public class Time extends AppCompatActivity {
 
+    // Declare UI elements
     EditText timeNo;
     Button timeBtn;
     TextView result;
     Spinner timespinner1, timespinner2;
     ArrayAdapter<CharSequence> adapter;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.time);
 
+        // Initialize UI elements
         timeNo = findViewById(R.id.timeNo);
         timeBtn = findViewById(R.id.timeBtn);
         result = findViewById(R.id.result);
         timespinner1 = findViewById(R.id.timeSpinner1);
         timespinner2 = findViewById(R.id.timeSpinner2);
 
+        // Create an ArrayAdapter using the string array
         adapter = ArrayAdapter.createFromResource(this, R.array.time_units, R.layout.spinner_text);
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_layout);
 
+        // Apply the adapter to the spinner
         timespinner1.setAdapter(adapter);
         timespinner2.setAdapter(adapter);
 
+        // Set on click listener for the time button
         timeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,6 +50,7 @@ public class Time extends AppCompatActivity {
         });
     }
 
+    // Method to convert time
     private void convertTime() {
         String inputValue = timeNo.getText().toString();
         if (inputValue.isEmpty()) {
@@ -53,20 +58,28 @@ public class Time extends AppCompatActivity {
             timeNo.requestFocus();
             return;
         } else {
+            // Convert the input value to a double
             double inputTime = Double.parseDouble(inputValue);
 
+            // Check for invalid input
             if (inputTime <= 0.0) {
                 Toast.makeText(Time.this, "Invalid Input. Please enter valid values.", Toast.LENGTH_SHORT).show();
             } else {
+                // Get the selected units from the spinners
                 String unitFrom = timespinner1.getSelectedItem().toString();
                 String unitTo = timespinner2.getSelectedItem().toString();
+
+                // Conversion of time
                 double convertedTime = convert(unitFrom, unitTo, inputTime);
+
+                // Display the result
                 String resultText = String.format("%.2f %s", convertedTime, unitTo);
                 result.setText(resultText);
             }
         }
     }
 
+    // Method to convert time based on selected units
     private double convert(String unitFrom, String unitTo, double inputTime) {
         if (unitFrom.equals("hr") && unitTo.equals("min")) {
             return inputTime * 60.0;
